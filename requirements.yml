@@ -1,0 +1,5 @@
+---
+roles:
+  - name: buluma.docker
+collections:
+  - name: ansible.posix
