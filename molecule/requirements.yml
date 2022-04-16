@@ -1,4 +1,2 @@
 ---
-- src: buluma.docker
-  version: "1.0.5"
 - src: buluma.setuptools
