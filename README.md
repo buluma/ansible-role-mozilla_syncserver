@@ -1,45 +1,115 @@
-# Intro
-This role installs and configures a Dockerized Mozilla Sync Server application.
+# [mozilla_syncserver](#mozilla_syncserver)
 
-## Requirements
-While there's no explicit dependency roles, the target machine should be able to act as a Docker host.  The `geerlingguy.docker` Ansible role is a suitable solution.
+A deployment role for Mozilla's Firefox Sync server.
 
-## Role Variables
-See the [comment in the default variables file](defaults/main.yml) for information on configuration.
+|GitHub|GitLab|Quality|Downloads|Version|Issues|Pull Requests|
+|------|------|-------|---------|-------|------|-------------|
+|[![github](https://github.com/buluma/ansible-role-mozilla_syncserver/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-mozilla_syncserver/actions)|[![gitlab](https://gitlab.com/buluma/ansible-role-mozilla_syncserver/badges/master/pipeline.svg)](https://gitlab.com/buluma/ansible-role-mozilla_syncserver)|[![quality](https://img.shields.io/ansible/quality/)](https://galaxy.ansible.com/buluma/mozilla_syncserver)|[![downloads](https://img.shields.io/ansible/role/d/)](https://galaxy.ansible.com/buluma/mozilla_syncserver)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-mozilla_syncserver.svg)](https://github.com/buluma/ansible-role-mozilla_syncserver/releases/)|[![Issues](https://img.shields.io/github/issues/buluma/ansible-role-mozilla_syncserver.svg)](https://github.com/buluma/ansible-role-mozilla_syncserver/issues/)|[![PullRequests](https://img.shields.io/github/issues-pr-closed-raw/buluma/ansible-role-mozilla_syncserver.svg)](https://github.com/buluma/ansible-role-mozilla_syncserver/pulls/)|
 
-## Dependencies
-None.
+## [Example Playbook](#example-playbook)
 
-## Example Playbook
-    - hosts: whatever
-      roles:
-        - triplepoint.mozilla_syncserver
-
-## Role Testing
-This role is tested with `molecule`, using `pipenv` to handle dependencies and the Python testing environment.
-
-### Setting Up Your Execution Environment
-``` sh
-pip install pipenv
+This example is taken from `molecule/default/converge.yml` and is tested on each push, pull request and release.
+```yaml
+---
+- name: Converge
+  hosts: all
+  tasks:
+    - name: "Include ansible-mozilla-syncserver"
+      include_role:
+        name: "ansible-mozilla-syncserver"
 ```
 
-Once you have `pipenv` installed, you can build the execution virtualenv with:
-``` sh
-pipenv install --dev
+The machine needs to be prepared. In CI this is done using `molecule/default/prepare.yml`:
+```yaml
+---
+- name: Prepare
+  hosts: all
+  pre_tasks:
+    - name: Update the apt-cache, if necessary
+      apt:
+        update_cache: true
+        cache_valid_time: 86400
+      when: ansible_facts['os_family'] == 'Debian'
+  roles:
+    - buluma.docker
 ```
 
-### Running Tests
-Once you have your environment configured, you can execute `molecule` with:
-``` sh
-pipenv run molecule test
+
+## [Role Variables](#role-variables)
+
+The default values for the variables are set in `defaults/main.yml`:
+```yaml
+---
+# What version of the mozilla/syncserver docker image should we
+# install?
+# https://hub.docker.com/r/mozilla/syncserver
+mozilla_syncserver_docker_version: latest
+
+# A list of additional volumes to mount into the docker container.  This is
+# useful for things like SSL certificates and custom css/image assets.
+mozilla_syncserver_additional_volumes: []
+# - "/some/directory:/some/mount:ro"
+# - "/some/file.yml:/some/mount/file.yml:ro"
+
+mozilla_syncserver_port: "5000"
+
+# A key/value set of environment variables and their values, which will be
+# set on the docker container.
+mozilla_syncserver_environment_variables:
+  SYNCSERVER_PUBLIC_URL: "http://localhost:{{ mozilla_syncserver_port }}"
+  SYNCSERVER_SECRET: "<PUT YOUR SECRET KEY HERE>"
+  SYNCSERVER_SQLURI: "sqlite:////data/syncserver.db"
+  SYNCSERVER_BATCH_UPLOAD_ENABLED: "true"
+  SYNCSERVER_FORCE_WSGI_ENVIRON: "false"
+  PORT: "{{ mozilla_syncserver_port }}"
+
+# If set to a string, the created Docker container will attach to a
+# pre-existing default Docker network, instead of creating its own.
+mozilla_syncserver_network_name: ""
+
+# Labels to put on the application containers
+mozilla_syncserver_container_labels: []
 ```
 
-### Regenerating the Lock File
-You shouldn't have to do this very often, but if you change the Python package requirements using `pipenv install {some_package}` commands or by editing the `Pipfile` directly, or if you find the build dependencies have fallen out of date, you might need to regenerate the `Pipfile.lock`.
-``` sh
-pipenv update --dev
-```
-Be sure and check in the regenerated `Pipfile.lock` when this process is complete.
+## [Requirements](#requirements)
 
-## License
+- pip packages listed in [requirements.txt](https://github.com/buluma/ansible-role-mozilla_syncserver/blob/main/requirements.txt).
+
+
+## [Context](#context)
+
+This role is a part of many compatible roles. Have a look at [the documentation of these roles](https://buluma.co.ke/) for further information.
+
+Here is an overview of related roles:
+
+![dependencies](https://raw.githubusercontent.com/buluma/ansible-role-mozilla_syncserver/png/requirements.png "Dependencies")
+
+## [Compatibility](#compatibility)
+
+This role has been tested on these [container images](https://hub.docker.com/u/buluma):
+
+|container|tags|
+|---------|----|
+|ubuntu|all|
+
+The minimum version of Ansible required is 2.9, tests have been done to:
+
+- The previous version.
+- The current version.
+- The development version.
+
+
+
+If you find issues, please register them in [GitHub](https://github.com/buluma/ansible-role-mozilla_syncserver/issues)
+
+## [Changelog](#changelog)
+
+[Role History](https://github.com/buluma/ansible-role-mozilla_syncserver/blob/master/CHANGELOG.md)
+
+## [License](#license)
+
 MIT
+
+## [Author Information](#author-information)
+
+[Michael Buluma](https://buluma.github.io/)

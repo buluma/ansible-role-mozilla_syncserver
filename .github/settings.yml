@@ -1,0 +1,8 @@
+---
+#
+# Ansible managed
+#
+repository:
+  description: A deployment role for Mozilla's Firefox Sync server.
+  homepage: https://buluma.github.io/
+  topics: mozilla, firefox, sync, syncserver, ansible, molecule, tox, playbook, hacktoberfest

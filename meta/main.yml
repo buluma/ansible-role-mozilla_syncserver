@@ -9,9 +9,7 @@ galaxy_info:
   platforms:
     - name: Ubuntu
       versions:
-        - xenial
-        - bionic
-        - focal
+        - all
   github_branch: main
   galaxy_tags:
     - mozilla
