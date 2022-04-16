@@ -9,3 +9,4 @@
       when: ansible_facts['os_family'] == 'Debian'
   roles:
     - buluma.docker
+    - buluma.setuptools
