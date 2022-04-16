@@ -23,3 +23,10 @@ platforms:
     pre_build_image: yes
 provisioner:
   name: ansible
+  inventory:
+    group_vars:
+      python3:
+        ansible_python_interpreter: /usr/bin/python3
+    host_vars:
+      bullseye:
+        ansible_python_interpreter: "/usr/bin/python3.9"
