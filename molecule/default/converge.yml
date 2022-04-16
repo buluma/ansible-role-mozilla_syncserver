@@ -4,4 +4,4 @@
   tasks:
     - name: "Include ansible-mozilla-syncserver"
       include_role:
-        name: "ansible-mozilla_syncserver"
+        name: "ansible-role-mozilla_syncserver"
