@@ -24,6 +24,10 @@
     owner: "mozsyncserver"
     group: "mozsyncserver"
 
+- name: Install requests python package
+  pip:
+    name: requests
+
 - name: Define the default docker container volumes
   set_fact:
     _mozilla_syncserver_docker_volumes:
