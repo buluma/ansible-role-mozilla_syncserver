@@ -7,7 +7,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Lint Ansible Playbook
         uses: ansible/ansible-lint-action@ba54de22a6edeea3aa385cd8c5f20ec1f960a30b
         with:
