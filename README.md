@@ -16,7 +16,7 @@ This example is taken from `molecule/default/converge.yml` and is tested on each
   tasks:
     - name: "Include ansible-mozilla-syncserver"
       include_role:
-        name: "ansible-mozilla-syncserver"
+        name: "buluma.mozilla_syncserver"
 ```
 
 The machine needs to be prepared. In CI this is done using `molecule/default/prepare.yml`:
@@ -31,7 +31,8 @@ The machine needs to be prepared. In CI this is done using `molecule/default/pre
         cache_valid_time: 86400
       when: ansible_facts['os_family'] == 'Debian'
   roles:
-    - buluma.docker
+    # - buluma.docker
+    - buluma.setuptools
 ```
 
 
@@ -75,10 +76,17 @@ mozilla_syncserver_container_labels: []
 
 - pip packages listed in [requirements.txt](https://github.com/buluma/ansible-role-mozilla_syncserver/blob/main/requirements.txt).
 
+## [Status of used roles](#status-of-requirements)
+
+The following roles are used to prepare a system. You can prepare your system in another way.
+
+| Requirement | GitHub | GitLab |
+|-------------|--------|--------|
+|[buluma.setuptools](https://galaxy.ansible.com/buluma/setuptools)|[![Build Status GitHub](https://github.com/buluma/ansible-role-setuptools/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-setuptools/actions)|[![Build Status GitLab ](https://gitlab.com/buluma/ansible-role-setuptools/badges/master/pipeline.svg)](https://gitlab.com/buluma/ansible-role-setuptools)|
 
 ## [Context](#context)
 
-This role is a part of many compatible roles. Have a look at [the documentation of these roles](https://buluma.co.ke/) for further information.
+This role is a part of many compatible roles. Have a look at [the documentation of these roles](https://buluma.github.io/) for further information.
 
 Here is an overview of related roles:
 
