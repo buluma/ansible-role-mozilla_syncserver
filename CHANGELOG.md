@@ -6,6 +6,7 @@
 
 **Merged pull requests:**
 
+- Bump ansible/ansible-lint-action from 6.0.2 to 6.8.2 [\#11](https://github.com/buluma/ansible-role-mozilla_syncserver/pull/11) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump ansible/ansible-lint-action from c37fb7b4bda2c8cb18f4942716bae9f11b0dc9bc to 6.0.2 [\#2](https://github.com/buluma/ansible-role-mozilla_syncserver/pull/2) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump actions/checkout from 2 to 3 [\#1](https://github.com/buluma/ansible-role-mozilla_syncserver/pull/1) ([dependabot[bot]](https://github.com/apps/dependabot))
 
