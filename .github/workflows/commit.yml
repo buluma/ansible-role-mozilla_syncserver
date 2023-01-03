@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Lint Ansible Playbook
-        uses: ansible/ansible-lint-action@27c37f9001153675ee6abcadcd722bcbdafaba08
+        uses: ansible/ansible-lint-action@2c4cedce36c2950aa48217b9d554c8c34da39eb6
         with:
           targets: "."
           override-deps: |
