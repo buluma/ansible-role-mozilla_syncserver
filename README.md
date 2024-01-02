@@ -1,10 +1,10 @@
-# [Ansible role mozilla_syncserver](#mozilla_syncserver)
+# Ansible role [mozilla_syncserver](https://galaxy.ansible.com/ui/standalone/roles/buluma/mozilla_syncserver/documentation)
 
 A deployment role for Mozilla's Firefox Sync server.
 
-|GitHub|GitLab|Downloads|Version|Issues|Pull Requests|
-|------|------|-------|-------|------|-------------|
-|[![github](https://github.com/buluma/ansible-role-mozilla_syncserver/actions/workflows/molecule.yml/badge.svg)](https://github.com/buluma/ansible-role-mozilla_syncserver/actions/workflows/molecule.yml)|[![gitlab](https://gitlab.com/shadowwalker/ansible-role-mozilla_syncserver/badges/master/pipeline.svg)](https://gitlab.com/shadowwalker/ansible-role-mozilla_syncserver)|[![downloads](https://img.shields.io/ansible/role/d/)](https://galaxy.ansible.com/buluma/mozilla_syncserver)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-mozilla_syncserver.svg)](https://github.com/buluma/ansible-role-mozilla_syncserver/releases/)|[![Issues](https://img.shields.io/github/issues/buluma/ansible-role-mozilla_syncserver.svg)](https://github.com/buluma/ansible-role-mozilla_syncserver/issues/)|[![PullRequests](https://img.shields.io/github/issues-pr-closed-raw/buluma/ansible-role-mozilla_syncserver.svg)](https://github.com/buluma/ansible-role-mozilla_syncserver/pulls/)|
+|GitHub|Version|Issues|Pull Requests|Downloads|
+|------|-------|------|-------------|---------|
+|[![github](https://github.com/buluma/ansible-role-mozilla_syncserver/actions/workflows/molecule.yml/badge.svg)](https://github.com/buluma/ansible-role-mozilla_syncserver/actions/workflows/molecule.yml)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-mozilla_syncserver.svg)](https://github.com/buluma/ansible-role-mozilla_syncserver/releases/)|[![Issues](https://img.shields.io/github/issues/buluma/ansible-role-mozilla_syncserver.svg)](https://github.com/buluma/ansible-role-mozilla_syncserver/issues/)|[![PullRequests](https://img.shields.io/github/issues-pr-closed-raw/buluma/ansible-role-mozilla_syncserver.svg)](https://github.com/buluma/ansible-role-mozilla_syncserver/pulls/)|[![Ansible Role](https://img.shields.io/ansible/role/d/buluma/mozilla_syncserver)](https://galaxy.ansible.com/ui/standalone/roles/buluma/mozilla_syncserver/documentation)|
 
 ## [Example Playbook](#example-playbook)
 
@@ -84,9 +84,9 @@ mozilla_syncserver_container_labels: []
 
 The following roles are used to prepare a system. You can prepare your system in another way.
 
-| Requirement | GitHub | GitLab |
+| Requirement | GitHub | Version |
 |-------------|--------|--------|
-|[buluma.setuptools](https://galaxy.ansible.com/buluma/setuptools)|[![Build Status GitHub](https://github.com/buluma/ansible-role-setuptools/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-setuptools/actions)|[![Build Status GitLab](https://gitlab.com/shadowwalker/ansible-role-setuptools/badges/master/pipeline.svg)](https://gitlab.com/shadowwalker/ansible-role-setuptools)|
+|[buluma.setuptools](https://galaxy.ansible.com/buluma/setuptools)|[![Ansible Molecule](https://github.com/buluma/ansible-role-setuptools/actions/workflows/molecule.yml/badge.svg)](https://github.com/buluma/ansible-role-setuptools/actions/workflows/molecule.yml)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-setuptools.svg)](https://github.com/shadowwalker/ansible-role-setuptools)|
 
 ## [Context](#context)
 
@@ -118,14 +118,9 @@ If you find issues, please register them in [GitHub](https://github.com/buluma/a
 
 ## [License](#license)
 
-[MIT](https://github.com/buluma/ansible-role-mozilla_syncserver/blob/master/LICENSE).
+[MIT](https://github.com/buluma/ansible-role-mozilla_syncserver/blob/master/LICENSE)
 
 ## [Author Information](#author-information)
 
-[Michael Buluma](https://buluma.github.io/)
+[Shadow Walker](https://buluma.github.io/)
 
-Please consider [sponsoring me](https://github.com/sponsors/buluma).
-
-### [Special Thanks](#special-thanks)
-
-Template inspired by [Robert de Bock](https://github.com/robertdebock)
