@@ -4,6 +4,10 @@
 
 [Full Changelog](https://github.com/buluma/ansible-role-mozilla_syncserver/compare/d7ada4e7834cea2dd0131863b240534a3480fa3a...HEAD)
 
+**Closed issues:**
+
+- Update buluma/todo-to-issue-action@v1.0.1 @buluma [\#20](https://github.com/buluma/ansible-role-mozilla_syncserver/issues/20)
+
 **Merged pull requests:**
 
 - Bump ansible/ansible-lint-action from 6.0.2 to 6.8.2 [\#11](https://github.com/buluma/ansible-role-mozilla_syncserver/pull/11) ([dependabot[bot]](https://github.com/apps/dependabot))
