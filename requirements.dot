@@ -1,0 +1,9 @@
+digraph PhiloDilemma {
+  label = "Michael Buluma" ;
+  overlap=false
+  {
+    "mozilla_syncserver" [fillcolor=yellow style=filled penwidth=3]
+    "buluma.setuptools" [fillcolor=green style=filled]
+  }
+  "mozilla_syncserver" -> "buluma.setuptools"
+}
