@@ -102,7 +102,7 @@ This role has been tested on these [container images](https://hub.docker.com/u/b
 
 |container|tags|
 |---------|----|
-|[Ubuntu](https://hub.docker.com/repository/docker/buluma/ubuntu/general)|all|
+|[Ubuntu](https://hub.docker.com/r/buluma/ubuntu)|all|
 
 The minimum version of Ansible required is 2.9, tests have been done to:
 
