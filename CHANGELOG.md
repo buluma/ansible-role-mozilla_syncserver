@@ -7,6 +7,8 @@
 **Closed issues:**
 
 - Update buluma/todo-to-issue-action@v1.0.1 @buluma [\#20](https://github.com/buluma/ansible-role-mozilla_syncserver/issues/20)
+- Update action [\#19](https://github.com/buluma/ansible-role-mozilla_syncserver/issues/19)
+- rebuild action [\#18](https://github.com/buluma/ansible-role-mozilla_syncserver/issues/18)
 
 **Merged pull requests:**
 
