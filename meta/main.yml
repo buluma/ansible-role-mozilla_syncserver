@@ -1,6 +1,6 @@
 ---
 galaxy_info:
-  author: 'Michael Buluma'
+  author: buluma
   role_name: mozilla_syncserver
   description: "A deployment role for Mozilla's Firefox Sync server."
   license: MIT

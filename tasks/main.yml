@@ -3,14 +3,14 @@
   group:
     name: "mozsyncserver"
     state: present
-    gid: 1001
+    gid: "1001"
     system: true
 
 - name: Ensure the container user exists
   user:
     name: "mozsyncserver"
     state: present
-    uid: 1001
+    uid: "1001"
     group: "mozsyncserver"
     create_home: false
     system: true
@@ -20,7 +20,7 @@
   file:
     path: /opt/mozilla_syncserver
     state: directory
-    mode: 0750
+    mode: "0750"
     owner: "mozsyncserver"
     group: "mozsyncserver"
 
@@ -41,13 +41,13 @@
   file:
     state: directory
     path: "/opt/ansible-docker-compose/mozilla-syncserver"
-    mode: 0755
+    mode: "0755"
 
 - name: Ensure this service's docker-compose template is present
   template:
     src: docker-compose.yml.j2
     dest: /opt/ansible-docker-compose/mozilla-syncserver/docker-compose.yml
-    mode: 0644
+    mode: "0644"
 
 - name: Ensure the service container(s) is/are started
   docker_compose:

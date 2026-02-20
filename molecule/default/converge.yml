@@ -4,4 +4,4 @@
   tasks:
     - name: "Include ansible-mozilla-syncserver"
       include_role:
-        name: "ansible-role-mozilla_syncserver"
+        name: "buluma.mozilla_syncserver"

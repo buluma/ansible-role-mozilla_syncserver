@@ -17,7 +17,7 @@ This example is taken from [`molecule/default/converge.yml`](https://github.com/
   tasks:
     - name: "Include ansible-mozilla-syncserver"
       include_role:
-        name: "ansible-role-mozilla_syncserver"
+        name: "buluma.mozilla_syncserver"
 ```
 
 The machine needs to be prepared. In CI this is done using [`molecule/default/prepare.yml`](https://github.com/buluma/ansible-role-mozilla_syncserver/blob/master/molecule/default/prepare.yml):
@@ -117,5 +117,5 @@ If you find issues, please register them on [GitHub](https://github.com/buluma/a
 
 ## [Author Information](#author-information)
 
-[Michael Buluma](https://buluma.github.io/)
+[buluma](https://buluma.github.io/)
 
