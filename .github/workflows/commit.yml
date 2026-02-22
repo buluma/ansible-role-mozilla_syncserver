@@ -1,19 +1,21 @@
----
 name: Ansible Lint
-
-on: [push, pull_request]
-
+true:
+- push
+- pull_request
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - name: Lint Ansible Playbook
-        uses: ansible/ansible-lint-action@27c37f9001153675ee6abcadcd722bcbdafaba08
-        with:
-          targets: "."
-          override-deps: |
-            ansible==5.4.0
-            ansible-lint==5.4.0
-            yamllint==1.26.3
-          args: ""
+    - uses: actions/checkout@v4
+    - name: Lint Ansible Playbook
+      uses: ansible/ansible-lint-action@27c37f9001153675ee6abcadcd722bcbdafaba08
+      with:
+        args: ''
+        override-deps: 'ansible==5.4.0
+
+          ansible-lint==5.4.0
+
+          yamllint==1.26.3
+
+          '
+        targets: .

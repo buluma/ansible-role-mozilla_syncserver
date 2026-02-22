@@ -1,17 +1,16 @@
----
+dependencies: []
 galaxy_info:
   author: buluma
-  role_name: mozilla_syncserver
-  description: "A deployment role for Mozilla's Firefox Sync server."
+  description: A deployment role for Mozilla's Firefox Sync server.
+  galaxy_tags:
+  - mozilla
+  - firefox
+  - sync
+  - syncserver
   license: MIT
   min_ansible_version: '2.9'
   platforms:
-    - name: Ubuntu
-      versions:
-        - all
-  galaxy_tags:
-    - mozilla
-    - firefox
-    - sync
-    - syncserver
-dependencies: []
+  - name: Ubuntu
+    versions:
+    - all
+  role_name: mozilla_syncserver

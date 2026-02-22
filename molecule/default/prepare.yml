@@ -1,12 +1,10 @@
----
-- name: Prepare
-  hosts: all
+- hosts: all
+  name: Prepare
   pre_tasks:
-    - name: Update the apt-cache, if necessary
-      apt:
-        update_cache: true
-        cache_valid_time: 86400
-      when: ansible_facts['os_family'] == 'Debian'
+  - apt:
+      cache_valid_time: 86400
+      update_cache: true
+    name: Update the apt-cache, if necessary
+    when: ansible_facts['os_family'] == 'Debian'
   roles:
-    # - buluma.docker
-    - buluma.setuptools
+  - buluma.setuptools

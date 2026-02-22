@@ -1,7 +1,6 @@
----
-- name: Converge
-  hosts: all
+- hosts: all
+  name: Converge
   tasks:
-    - name: "Include ansible-mozilla-syncserver"
-      include_role:
-        name: "buluma.mozilla_syncserver"
+  - include_role:
+      name: buluma.mozilla_syncserver
+    name: Include ansible-mozilla-syncserver

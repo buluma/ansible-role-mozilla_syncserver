@@ -1,6 +1,4 @@
----
-roles:
-  # - name: buluma.docker
-  - name: buluma.setuptools
 collections:
-  - name: ansible.posix
+- name: ansible.posix
+roles:
+- name: buluma.setuptools

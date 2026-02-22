@@ -11,30 +11,27 @@ A deployment role for Mozilla's Firefox Sync server.
 This example is taken from [`molecule/default/converge.yml`](https://github.com/buluma/ansible-role-mozilla_syncserver/blob/master/molecule/default/converge.yml) and is tested on each push, pull request and release.
 
 ```yaml
----
-- name: Converge
-  hosts: all
+- hosts: all
+  name: Converge
   tasks:
-    - name: "Include ansible-mozilla-syncserver"
-      include_role:
-        name: "buluma.mozilla_syncserver"
+  - include_role:
+      name: buluma.mozilla_syncserver
+    name: Include ansible-mozilla-syncserver
 ```
 
 The machine needs to be prepared. In CI this is done using [`molecule/default/prepare.yml`](https://github.com/buluma/ansible-role-mozilla_syncserver/blob/master/molecule/default/prepare.yml):
 
 ```yaml
----
-- name: Prepare
-  hosts: all
+- hosts: all
+  name: Prepare
   pre_tasks:
-    - name: Update the apt-cache, if necessary
-      apt:
-        update_cache: true
-        cache_valid_time: 86400
-      when: ansible_facts['os_family'] == 'Debian'
+  - apt:
+      cache_valid_time: 86400
+      update_cache: true
+    name: Update the apt-cache, if necessary
+    when: ansible_facts['os_family'] == 'Debian'
   roles:
-    # - buluma.docker
-    - buluma.setuptools
+  - buluma.setuptools
 ```
 
 Also see a [full explanation and example](https://buluma.github.io/how-to-use-these-roles.html) on how to use these roles.
@@ -44,36 +41,18 @@ Also see a [full explanation and example](https://buluma.github.io/how-to-use-th
 The default values for the variables are set in [`defaults/main.yml`](https://github.com/buluma/ansible-role-mozilla_syncserver/blob/master/defaults/main.yml):
 
 ```yaml
----
-# What version of the mozilla/syncserver docker image should we
-# install?
-# https://hub.docker.com/r/mozilla/syncserver
-mozilla_syncserver_docker_version: latest
-
-# A list of additional volumes to mount into the docker container.  This is
-# useful for things like SSL certificates and custom css/image assets.
 mozilla_syncserver_additional_volumes: []
-# - "/some/directory:/some/mount:ro"
-# - "/some/file.yml:/some/mount/file.yml:ro"
-
-mozilla_syncserver_port: "5000"
-
-# A key/value set of environment variables and their values, which will be
-# set on the docker container.
-mozilla_syncserver_environment_variables:
-  SYNCSERVER_PUBLIC_URL: "http://localhost:{{ mozilla_syncserver_port }}"
-  SYNCSERVER_SECRET: "<PUT YOUR SECRET KEY HERE>"
-  SYNCSERVER_SQLURI: "sqlite:////data/syncserver.db"
-  SYNCSERVER_BATCH_UPLOAD_ENABLED: "true"
-  SYNCSERVER_FORCE_WSGI_ENVIRON: "false"
-  PORT: "{{ mozilla_syncserver_port }}"
-
-# If set to a string, the created Docker container will attach to a
-# pre-existing default Docker network, instead of creating its own.
-mozilla_syncserver_network_name: ""
-
-# Labels to put on the application containers
 mozilla_syncserver_container_labels: []
+mozilla_syncserver_docker_version: latest
+mozilla_syncserver_environment_variables:
+  PORT: '{{ mozilla_syncserver_port }}'
+  SYNCSERVER_BATCH_UPLOAD_ENABLED: 'true'
+  SYNCSERVER_FORCE_WSGI_ENVIRON: 'false'
+  SYNCSERVER_PUBLIC_URL: http://localhost:{{ mozilla_syncserver_port }}
+  SYNCSERVER_SECRET: <PUT YOUR SECRET KEY HERE>
+  SYNCSERVER_SQLURI: sqlite:////data/syncserver.db
+mozilla_syncserver_network_name: ''
+mozilla_syncserver_port: '5000'
 ```
 
 ## [Requirements](#requirements)
