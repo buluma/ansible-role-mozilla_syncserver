@@ -1,32 +1,22 @@
 ---
 name: Ansible Lint
 true:
-  - push
-  - pull_request
+- push
+- pull_request
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-<<<<<<< HEAD
     - uses: actions/checkout@v6
     - name: Lint Ansible Playbook
       uses: ansible/ansible-lint-action@27c37f9001153675ee6abcadcd722bcbdafaba08
       with:
         args: ''
         override-deps: 'ansible==5.4.0
-=======
-      - uses: actions/checkout@v6
-      - name: Lint Ansible Playbook
-        uses:
-          ansible/ansible-lint-action@27c37f9001153675ee6abcadcd722bcbdafaba08
-        with:
-          args: ''
-          override-deps: 'ansible==5.4.0
->>>>>>> aeca491 (Update files using ansible-generator)
 
-            ansible-lint==5.4.0
+          ansible-lint==5.4.0
 
-            yamllint==1.26.3
+          yamllint==1.26.3
 
-            '
-          targets: .
+          '
+        targets: .
