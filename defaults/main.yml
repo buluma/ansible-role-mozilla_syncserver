@@ -1,3 +1,4 @@
+---
 mozilla_syncserver_additional_volumes: []
 mozilla_syncserver_container_labels: []
 mozilla_syncserver_docker_version: latest

@@ -11,27 +11,29 @@ A deployment role for Mozilla's Firefox Sync server.
 This example is taken from [`molecule/default/converge.yml`](https://github.com/buluma/ansible-role-mozilla_syncserver/blob/master/molecule/default/converge.yml) and is tested on each push, pull request and release.
 
 ```yaml
-- hosts: all
-  name: Converge
-  tasks:
-  - include_role:
-      name: buluma.mozilla_syncserver
-    name: Include ansible-mozilla-syncserver
+---
+  - hosts: all
+    name: Converge
+    tasks:
+      - include_role:
+          name: buluma.mozilla_syncserver
+        name: Include ansible-mozilla-syncserver
 ```
 
 The machine needs to be prepared. In CI this is done using [`molecule/default/prepare.yml`](https://github.com/buluma/ansible-role-mozilla_syncserver/blob/master/molecule/default/prepare.yml):
 
 ```yaml
-- hosts: all
-  name: Prepare
-  pre_tasks:
-  - apt:
-      cache_valid_time: 86400
-      update_cache: true
-    name: Update the apt-cache, if necessary
-    when: ansible_facts['os_family'] == 'Debian'
-  roles:
-  - buluma.setuptools
+---
+  - hosts: all
+    name: Prepare
+    pre_tasks:
+      - apt:
+          cache_valid_time: 86400
+          update_cache: true
+        name: Update the apt-cache, if necessary
+        when: ansible_facts['os_family'] == 'Debian'
+    roles:
+      - buluma.setuptools
 ```
 
 Also see a [full explanation and example](https://buluma.github.io/how-to-use-these-roles.html) on how to use these roles.
@@ -41,6 +43,7 @@ Also see a [full explanation and example](https://buluma.github.io/how-to-use-th
 The default values for the variables are set in [`defaults/main.yml`](https://github.com/buluma/ansible-role-mozilla_syncserver/blob/master/defaults/main.yml):
 
 ```yaml
+---
 mozilla_syncserver_additional_volumes: []
 mozilla_syncserver_container_labels: []
 mozilla_syncserver_docker_version: latest

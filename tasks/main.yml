@@ -1,47 +1,48 @@
-- group:
-    gid: '1001'
-    name: mozsyncserver
-    state: present
-    system: true
-  name: Ensure the container user group exists
-- name: Ensure the container user exists
-  user:
-    create_home: false
-    group: mozsyncserver
-    name: mozsyncserver
-    shell: /usr/sbin/nologin
-    state: present
-    system: true
-    uid: '1001'
-- file:
-    group: mozsyncserver
-    mode: '0750'
-    owner: mozsyncserver
-    path: /opt/mozilla_syncserver
-    state: directory
-  name: Ensure the config directory is present
-- name: Install requests python package
-  pip:
-    name: requests
-- name: Define the default docker container volumes
-  set_fact:
-    _mozilla_syncserver_docker_volumes:
-    - /opt/mozilla_syncserver:/data
-- name: Append any additional volume mounts
-  set_fact:
-    _mozilla_syncserver_docker_volumes: '{{ _mozilla_syncserver_docker_volumes }}
-      + {{ mozilla_syncserver_additional_volumes }}'
-- file:
-    mode: '0755'
-    path: /opt/ansible-docker-compose/mozilla-syncserver
-    state: directory
-  name: Ensure the docker-compose template directory exists
-- name: Ensure this service's docker-compose template is present
-  template:
-    dest: /opt/ansible-docker-compose/mozilla-syncserver/docker-compose.yml
-    mode: '0644'
-    src: docker-compose.yml.j2
-- docker_compose:
-    project_src: /opt/ansible-docker-compose/mozilla-syncserver
-    pull: true
-  name: Ensure the service container(s) is/are started
+---
+  - group:
+      gid: '1001'
+      name: mozsyncserver
+      state: present
+      system: true
+    name: Ensure the container user group exists
+  - name: Ensure the container user exists
+    user:
+      create_home: false
+      group: mozsyncserver
+      name: mozsyncserver
+      shell: /usr/sbin/nologin
+      state: present
+      system: true
+      uid: '1001'
+  - file:
+      group: mozsyncserver
+      mode: '0750'
+      owner: mozsyncserver
+      path: /opt/mozilla_syncserver
+      state: directory
+    name: Ensure the config directory is present
+  - name: Install requests python package
+    pip:
+      name: requests
+  - name: Define the default docker container volumes
+    set_fact:
+      _mozilla_syncserver_docker_volumes:
+        - /opt/mozilla_syncserver:/data
+  - name: Append any additional volume mounts
+    set_fact:
+      _mozilla_syncserver_docker_volumes: '{{ _mozilla_syncserver_docker_volumes }}
+        + {{ mozilla_syncserver_additional_volumes }}'
+  - file:
+      mode: '0755'
+      path: /opt/ansible-docker-compose/mozilla-syncserver
+      state: directory
+    name: Ensure the docker-compose template directory exists
+  - name: Ensure this service's docker-compose template is present
+    template:
+      dest: /opt/ansible-docker-compose/mozilla-syncserver/docker-compose.yml
+      mode: '0644'
+      src: docker-compose.yml.j2
+  - docker_compose:
+      project_src: /opt/ansible-docker-compose/mozilla-syncserver
+      pull: true
+    name: Ensure the service container(s) is/are started
