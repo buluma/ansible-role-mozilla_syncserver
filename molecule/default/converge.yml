@@ -2,6 +2,6 @@
 - name: Converge
   hosts: all
   tasks:
-    - ansible.builtin.include_role:
+    - name: Include ansible-mozilla-syncserver
+      ansible.builtin.include_role:
         name: buluma.mozilla_syncserver
-      name: Include ansible-mozilla-syncserver

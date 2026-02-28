@@ -12,28 +12,28 @@ This example is taken from [`molecule/default/converge.yml`](https://github.com/
 
 ```yaml
 ---
-- hosts: all
-  name: Converge
+- name: Converge
+  hosts: all
   tasks:
-  - include_role:
-      name: buluma.mozilla_syncserver
-    name: Include ansible-mozilla-syncserver
+    - ansible.builtin.include_role:
+        name: buluma.mozilla_syncserver
+      name: Include ansible-mozilla-syncserver
 ```
 
 The machine needs to be prepared. In CI this is done using [`molecule/default/prepare.yml`](https://github.com/buluma/ansible-role-mozilla_syncserver/blob/master/molecule/default/prepare.yml):
 
 ```yaml
 ---
-- hosts: all
-  name: Prepare
+- name: Prepare
+  hosts: all
   pre_tasks:
-  - apt:
-      cache_valid_time: 86400
-      update_cache: true
-    name: Update the apt-cache, if necessary
-    when: ansible_facts['os_family'] == 'Debian'
+    - ansible.builtin.apt:
+        cache_valid_time: 86400
+        update_cache: true
+      name: Update the apt-cache, if necessary
+      when: ansible_facts['os_family'] == 'Debian'
   roles:
-  - buluma.setuptools
+    - buluma.setuptools
 ```
 
 Also see a [full explanation and example](https://buluma.github.io/how-to-use-these-roles.html) on how to use these roles.
@@ -48,14 +48,14 @@ mozilla_syncserver_additional_volumes: []
 mozilla_syncserver_container_labels: []
 mozilla_syncserver_docker_version: latest
 mozilla_syncserver_environment_variables:
-  PORT: '{{ mozilla_syncserver_port }}'
-  SYNCSERVER_BATCH_UPLOAD_ENABLED: 'true'
-  SYNCSERVER_FORCE_WSGI_ENVIRON: 'false'
+  PORT: "{{ mozilla_syncserver_port }}"
+  SYNCSERVER_BATCH_UPLOAD_ENABLED: "true"
+  SYNCSERVER_FORCE_WSGI_ENVIRON: "false"
   SYNCSERVER_PUBLIC_URL: http://localhost:{{ mozilla_syncserver_port }}
   SYNCSERVER_SECRET: <PUT YOUR SECRET KEY HERE>
   SYNCSERVER_SQLURI: sqlite:////data/syncserver.db
-mozilla_syncserver_network_name: ''
-mozilla_syncserver_port: '5000'
+mozilla_syncserver_network_name: ""
+mozilla_syncserver_port: "5000"
 ```
 
 ## [Requirements](#requirements)

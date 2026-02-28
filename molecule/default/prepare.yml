@@ -2,10 +2,10 @@
 - name: Prepare
   hosts: all
   pre_tasks:
-    - ansible.builtin.apt:
+    - name: Update the apt-cache, if necessary
+      ansible.builtin.apt:
         cache_valid_time: 86400
         update_cache: true
-      name: Update the apt-cache, if necessary
       when: ansible_facts['os_family'] == 'Debian'
   roles:
     - buluma.setuptools
