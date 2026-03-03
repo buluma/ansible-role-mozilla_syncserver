@@ -15,9 +15,9 @@ This example is taken from [`molecule/default/converge.yml`](https://github.com/
 - name: Converge
   hosts: all
   tasks:
-    - ansible.builtin.include_role:
+    - name: Include ansible-mozilla-syncserver
+      ansible.builtin.include_role:
         name: buluma.mozilla_syncserver
-      name: Include ansible-mozilla-syncserver
 ```
 
 The machine needs to be prepared. In CI this is done using [`molecule/default/prepare.yml`](https://github.com/buluma/ansible-role-mozilla_syncserver/blob/master/molecule/default/prepare.yml):
@@ -27,10 +27,10 @@ The machine needs to be prepared. In CI this is done using [`molecule/default/pr
 - name: Prepare
   hosts: all
   pre_tasks:
-    - ansible.builtin.apt:
+    - name: Update the apt-cache, if necessary
+      ansible.builtin.apt:
         cache_valid_time: 86400
         update_cache: true
-      name: Update the apt-cache, if necessary
       when: ansible_facts['os_family'] == 'Debian'
   roles:
     - buluma.setuptools
