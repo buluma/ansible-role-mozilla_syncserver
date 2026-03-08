@@ -3,14 +3,14 @@ name: Ansible Galaxy Publish
 true:
   release:
     types:
-    - published
+      - published
 jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v6
-    - name: galaxy
-      uses: robertdebock/galaxy-action@1.2.0
-      with:
-        galaxy_api_key: ${{ secrets.galaxy_api_key }}
-        git_branch: main
+      - uses: actions/checkout@v6
+      - name: galaxy
+        uses: robertdebock/galaxy-action@1.2.0
+        with:
+          galaxy_api_key: ${{ secrets.galaxy_api_key }}
+          git_branch: main
