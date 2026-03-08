@@ -2,9 +2,9 @@
 
 A deployment role for Mozilla's Firefox Sync server.
 
-|GitHub|GitLab|Downloads|Version|
-|------|------|---------|-------|
-|[![github](https://github.com/buluma/ansible-role-mozilla_syncserver/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-mozilla_syncserver/actions)|[![gitlab](https://gitlab.com/shadowwalker/ansible-role-mozilla_syncserver/badges/master/pipeline.svg)](https://gitlab.com/shadowwalker/ansible-role-mozilla_syncserver)|[![downloads](https://img.shields.io/ansible/role/d/buluma/mozilla_syncserver)](https://galaxy.ansible.com/buluma/mozilla_syncserver)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-mozilla_syncserver.svg)](https://github.com/buluma/ansible-role-mozilla_syncserver/releases/)|
+|GitHub|Issues|Pull Requests|Version|Downloads|
+|------|------|-------------|-------|---------|
+|[![github](https://github.com/buluma/ansible-role-mozilla_syncserver/actions/workflows/molecule.yml/badge.svg)](https://github.com/buluma/ansible-role-mozilla_syncserver/actions/workflows/molecule.yml)|[![Issues](https://img.shields.io/github/issues/buluma/ansible-role-mozilla_syncserver.svg)](https://github.com/buluma/ansible-role-mozilla_syncserver/issues/)|[![PullRequests](https://img.shields.io/github/issues-pr-closed-raw/buluma/ansible-role-mozilla_syncserver.svg)](https://github.com/buluma/ansible-role-mozilla_syncserver/pulls/)|[![Version](https://img.shields.io/github/release/buluma/ansible-role-mozilla_syncserver.svg)](https://github.com/buluma/ansible-role-mozilla_syncserver/releases/)|[![Ansible Role](https://img.shields.io/ansible/role/d/buluma/mozilla_syncserver)](https://galaxy.ansible.com/ui/standalone/roles/buluma/mozilla_syncserver/documentation)|
 
 ## [Example Playbook](#example-playbook)
 
@@ -66,24 +66,25 @@ mozilla_syncserver_port: "5000"
 
 The following roles are used to prepare a system. You can prepare your system in another way.
 
-| Requirement | GitHub | GitLab |
-|-------------|--------|--------|
-|[buluma.setuptools](https://galaxy.ansible.com/buluma/setuptools)|[![Build Status GitHub](https://github.com/buluma/ansible-role-setuptools/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-setuptools/actions)|[![Build Status GitLab](https://gitlab.com/shadowwalker/ansible-role-setuptools/badges/master/pipeline.svg)](https://gitlab.com/shadowwalker/ansible-role-setuptools)|
+| Requirement | GitHub |
+|-------------|--------|
+|[buluma.setuptools](https://galaxy.ansible.com/buluma/setuptools)|[![Build Status GitHub](https://github.com/buluma/ansible-role-setuptools/workflows/Ansible%20Molecule/badge.svg)](https://github.com/buluma/ansible-role-setuptools/actions)|
 
 ## [Context](#context)
 
 This role is part of many compatible roles. Have a look at [the documentation of these roles](https://buluma.github.io/) for further information.
 
 Here is an overview of related roles:
+
 ![dependencies](https://raw.githubusercontent.com/buluma/ansible-role-mozilla_syncserver/png/requirements.png "Dependencies")
 
 ## [Compatibility](#compatibility)
 
-This role has been tested on these [container images](https://hub.docker.com/u/buluma):
+This role has been tested on these [container images](https://hub.docker.com/u/robertdebock):
 
 |container|tags|
 |---------|----|
-|[Ubuntu](https://hub.docker.com/r/buluma/ubuntu)|all|
+|[Ubuntu](https://hub.docker.com/r/robertdebock/ubuntu)|all|
 
 The minimum version of Ansible required is 2.9, tests have been done on:
 
@@ -100,3 +101,4 @@ If you find issues, please register them on [GitHub](https://github.com/buluma/a
 ## [Author Information](#author-information)
 
 [buluma](https://buluma.github.io/)
+
