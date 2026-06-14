@@ -1,6 +1,6 @@
 ---
 name: Ansible Lint
-true:
+"on":
   - push
   - pull_request
 jobs:

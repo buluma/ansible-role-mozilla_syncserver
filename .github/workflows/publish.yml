@@ -1,6 +1,6 @@
 ---
 name: Ansible Galaxy Publish
-true:
+"on":
   release:
     types:
       - published
