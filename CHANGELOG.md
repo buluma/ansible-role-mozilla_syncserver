@@ -1,8 +1,8 @@
 # Changelog
 
-## [Unreleased](https://github.com/buluma/ansible-role-mozilla_syncserver/tree/HEAD)
+## [26.6.0](https://github.com/buluma/ansible-role-mozilla_syncserver/tree/26.6.0) (2026-06-14)
 
-[Full Changelog](https://github.com/buluma/ansible-role-mozilla_syncserver/compare/d7ada4e7834cea2dd0131863b240534a3480fa3a...HEAD)
+[Full Changelog](https://github.com/buluma/ansible-role-mozilla_syncserver/compare/d7ada4e7834cea2dd0131863b240534a3480fa3a...26.6.0)
 
 **Closed issues:**
 
@@ -12,6 +12,10 @@
 
 **Merged pull requests:**
 
+- Bump release-drafter/release-drafter from 6 to 7 [\#26](https://github.com/buluma/ansible-role-mozilla_syncserver/pull/26) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump docker/setup-buildx-action from 3 to 4 [\#24](https://github.com/buluma/ansible-role-mozilla_syncserver/pull/24) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump ansible/ansible-lint from 26.1.1 to 26.2.0 [\#23](https://github.com/buluma/ansible-role-mozilla_syncserver/pull/23) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump actions/checkout from 4 to 6 [\#22](https://github.com/buluma/ansible-role-mozilla_syncserver/pull/22) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump ansible/ansible-lint-action from 6.0.2 to 6.8.2 [\#11](https://github.com/buluma/ansible-role-mozilla_syncserver/pull/11) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump ansible/ansible-lint-action from c37fb7b4bda2c8cb18f4942716bae9f11b0dc9bc to 6.0.2 [\#2](https://github.com/buluma/ansible-role-mozilla_syncserver/pull/2) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump actions/checkout from 2 to 3 [\#1](https://github.com/buluma/ansible-role-mozilla_syncserver/pull/1) ([dependabot[bot]](https://github.com/apps/dependabot))
