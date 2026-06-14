@@ -9,7 +9,7 @@ galaxy_info:
     - sync
     - syncserver
   license: MIT
-  min_ansible_version: "2.9"
+  min_ansible_version: "2.12"
   platforms:
     - name: Ubuntu
       versions:
