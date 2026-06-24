@@ -10,8 +10,4 @@ galaxy_info:
     - syncserver
   license: MIT
   min_ansible_version: "2.12"
-  platforms:
-    - name: Ubuntu
-      versions:
-        - all
   role_name: mozilla_syncserver
