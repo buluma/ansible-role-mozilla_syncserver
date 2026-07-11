@@ -23,17 +23,21 @@ This example is taken from [`molecule/default/converge.yml`](https://github.com/
 The machine needs to be prepared. In CI this is done using [`molecule/default/prepare.yml`](https://github.com/buluma/ansible-role-mozilla_syncserver/blob/master/molecule/default/prepare.yml):
 
 ```yaml
----
 - name: Prepare
   hosts: all
   pre_tasks:
-    - name: Update the apt-cache, if necessary
-      ansible.builtin.apt:
-        cache_valid_time: 86400
-        update_cache: true
-      when: ansible_facts['os_family'] == 'Debian'
+  - name: Install sudo if missing
+    ansible.builtin.raw: '{{ ansible_pkg_mgr | default(''dnf'') }} install -y sudo'
+    become: false
+    changed_when: false
+    failed_when: false
+  - name: Update the apt-cache, if necessary
+    ansible.builtin.apt:
+      cache_valid_time: 86400
+      update_cache: true
+    when: ansible_facts['os_family'] == 'Debian'
   roles:
-    - buluma.setuptools
+  - buluma.setuptools
 ```
 
 Also see a [full explanation and example](https://buluma.github.io/how-to-use-these-roles.html) on how to use these roles.
@@ -80,13 +84,16 @@ Here is an overview of related roles:
 
 ## [Compatibility](#compatibility)
 
-This role has been tested on these [container images](https://hub.docker.com/u/robertdebock):
+This role has been tested on these [container images](https://hub.docker.com/u/buluma):
 
 |container|tags|
 |---------|----|
-|[Ubuntu](https://hub.docker.com/r/robertdebock/ubuntu)|all|
+|[EL](https://hub.docker.com/r/buluma/docker-molecule-images)|all|
+|[Debian](https://hub.docker.com/r/buluma/docker-molecule-images)|all|
+|[Fedora](https://hub.docker.com/r/buluma/docker-molecule-images)|all|
+|[Ubuntu](https://hub.docker.com/r/buluma/docker-molecule-images)|all|
 
-The minimum version of Ansible required is 2.9, tests have been done on:
+The minimum version of Ansible required is 2.12, tests have been done on:
 
 - The previous version.
 - The current version.
@@ -102,6 +109,3 @@ If you find issues, please register them on [GitHub](https://github.com/buluma/a
 
 [buluma](https://buluma.github.io/)
 
-### Get Help
-- Report issues: https://github.com/buluma/ansible-role-mozilla_syncserver/issues/new
-- See docs: https://docs.ansible.com/collection/gallery/ansible-role-mozilla_syncserver
