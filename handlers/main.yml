@@ -1,6 +1,6 @@
 ---
 - name: Restart mozilla-syncserver
-  docker_compose:
+  community.docker.docker_compose_v2:
     project_src: /opt/ansible-docker-compose/mozilla-syncserver
-    pull: true
-    restarted: true
+    pull: always
+    state: restarted
