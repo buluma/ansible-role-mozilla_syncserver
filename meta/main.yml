@@ -1,6 +1,5 @@
 ---
-dependencies:
-  - role: buluma.docker_ce
+dependencies: []
 galaxy_info:
   author: buluma
   description: A deployment role for Mozilla's Firefox Sync server.
