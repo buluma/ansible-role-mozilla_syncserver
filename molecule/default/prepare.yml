@@ -1,9 +1,19 @@
 ---
 - name: Prepare
   hosts: all
+  gather_facts: false
   pre_tasks:
     - name: Install sudo if missing
-      ansible.builtin.raw: "{{ ansible_pkg_mgr | default('dnf') }} install -y sudo"
+      ansible.builtin.raw: >-
+        if command -v apt-get >/dev/null 2>&1; then
+          apt-get update && apt-get install -y sudo;
+        elif command -v dnf >/dev/null 2>&1; then
+          dnf install -y sudo;
+        elif command -v yum >/dev/null 2>&1; then
+          yum install -y sudo;
+        elif command -v zypper >/dev/null 2>&1; then
+          zypper -n install sudo;
+        fi
       become: false
       changed_when: false
       failed_when: false
@@ -19,6 +29,9 @@
       become: false
       changed_when: false
       failed_when: false
+
+    - name: Gather facts after Python is available
+      ansible.builtin.setup:
 
     - name: Configure passwordless sudo
       ansible.builtin.raw: >-
@@ -38,3 +51,9 @@
   roles:
     - buluma.setuptools
     - buluma.docker_ce
+  tasks:
+    - name: Start Docker in the privileged Molecule container
+      ansible.builtin.service:
+        enabled: true
+        name: docker
+        state: started

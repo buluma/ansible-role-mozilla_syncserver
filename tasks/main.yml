@@ -1,7 +1,6 @@
 ---
 - name: Ensure the container user group exists
   ansible.builtin.group:
-    gid: "1001"
     name: mozsyncserver
     state: present
     system: true
@@ -21,6 +20,10 @@
     owner: mozsyncserver
     path: /opt/mozilla_syncserver
     state: directory
+- name: Install Python packaging support for the pip module
+  ansible.builtin.package:
+    name: python3-packaging
+    state: present
 - name: Install requests python package
   ansible.builtin.pip:
     name: requests
