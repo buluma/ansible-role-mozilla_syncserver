@@ -20,7 +20,7 @@ platforms:
     cgroupns_mode: host
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup:rw
-      - /var/run/docker.sock:/var/run/docker.sock
+      - /var/run/docker.sock:/host-docker.sock
     privileged: true
     pre_build_image: true
 provisioner:

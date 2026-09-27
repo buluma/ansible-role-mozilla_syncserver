@@ -1,6 +1,8 @@
 ---
 - name: Converge
   hosts: all
+  environment:
+    DOCKER_HOST: unix:///host-docker.sock
   tasks:
     - name: Include ansible-mozilla-syncserver
       ansible.builtin.include_role:

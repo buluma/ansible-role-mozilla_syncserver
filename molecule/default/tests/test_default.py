@@ -9,14 +9,17 @@ testinfra_hosts = testinfra.utils.ansible_runner.AnsibleRunner(
 
 
 def test_docker_engine_accessible(host):
-    result = host.run('docker info --format "{{.ServerVersion}}"')
+    result = host.run(
+        'docker --host unix:///host-docker.sock info --format "{{.ServerVersion}}"'
+    )
     assert result.rc == 0
     assert result.stdout.strip()
 
 
 def test_syncserver_container_running(host):
     result = host.run(
-        'docker inspect --format "{{.State.Running}}" mozilla-syncserver'
+        'docker --host unix:///host-docker.sock inspect --format '
+        '"{{.State.Running}}" mozilla-syncserver'
     )
     assert result.rc == 0
     assert result.stdout.strip() == 'true'
