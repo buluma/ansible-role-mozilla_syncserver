@@ -9,25 +9,3 @@
         name: buluma.mozilla_syncserver
       vars:
         mozilla_syncserver_docker_compose_pull: missing
-    - name: Allow the syncserver container to initialize
-      ansible.builtin.pause:
-        seconds: 10
-    - name: Inspect syncserver container state
-      ansible.builtin.command:
-        cmd: >-
-          docker --host unix:///host-docker.sock inspect --format
-          '{% raw %}{{ json .State }}{% endraw %}' mozilla-syncserver
-      changed_when: false
-      register: _mozilla_syncserver_container_state
-    - name: Show syncserver container state
-      ansible.builtin.debug:
-        var: _mozilla_syncserver_container_state.stdout
-    - name: Read syncserver container logs
-      ansible.builtin.command:
-        cmd: docker --host unix:///host-docker.sock logs --tail 30 mozilla-syncserver
-      changed_when: false
-      register: _mozilla_syncserver_container_logs
-      failed_when: false
-    - name: Show syncserver container logs
-      ansible.builtin.debug:
-        var: _mozilla_syncserver_container_logs.stdout_lines

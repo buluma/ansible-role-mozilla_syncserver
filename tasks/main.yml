@@ -46,7 +46,3 @@
   community.docker.docker_compose_v2:
     project_src: /opt/ansible-docker-compose/mozilla-syncserver
     pull: "{{ mozilla_syncserver_docker_compose_pull }}"
-  register: _mozilla_syncserver_compose_result
-- name: Report Docker Compose actions
-  ansible.builtin.debug:
-    var: _mozilla_syncserver_compose_result.actions

@@ -19,7 +19,7 @@ def test_docker_engine_accessible(host):
 def test_syncserver_container_running(host):
     result = host.run(
         'docker --host unix:///host-docker.sock inspect --format '
-        '"{{.State.Running}}" mozilla-syncserver'
+        '"{{.State.Status}}" mozilla-syncserver'
     )
     assert result.rc == 0
-    assert result.stdout.strip() == 'true'
+    assert result.stdout.strip() == 'running'
