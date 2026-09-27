@@ -57,9 +57,3 @@
   roles:
     - buluma.setuptools
     - buluma.docker_ce
-  tasks:
-    - name: Start Docker in the privileged Molecule container
-      ansible.builtin.service:
-        enabled: true
-        name: docker
-        state: started
