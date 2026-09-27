@@ -25,7 +25,7 @@ services:
 {% if mozilla_syncserver_environment_variables %}
     environment:
 {% for k, v in mozilla_syncserver_environment_variables.items() %}
-      - {{ k }}={{ v }}
+      {{ k }}: {{ v | string | to_json }}
 {% endfor %}
 {% endif %}
 {% if mozilla_syncserver_network_name %}

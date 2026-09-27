@@ -9,6 +9,7 @@
     create_home: false
     group: mozsyncserver
     name: mozsyncserver
+    non_unique: true
     shell: /usr/sbin/nologin
     state: present
     system: true
@@ -20,13 +21,10 @@
     owner: mozsyncserver
     path: /opt/mozilla_syncserver
     state: directory
-- name: Install Python packaging support for the pip module
+- name: Install requests for Python Docker modules
   ansible.builtin.package:
-    name: python3-packaging
+    name: python3-requests
     state: present
-- name: Install requests python package
-  ansible.builtin.pip:
-    name: requests
 - name: Define the default docker container volumes
   ansible.builtin.set_fact:
     _mozilla_syncserver_docker_volumes:

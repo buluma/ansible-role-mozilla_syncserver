@@ -48,6 +48,12 @@
         cache_valid_time: 86400
         update_cache: true
       when: ansible_facts['os_family'] == 'Debian'
+
+    - name: Install GnuPG for the Docker apt repository
+      ansible.builtin.package:
+        name: gnupg
+        state: present
+      when: ansible_facts['os_family'] == 'Debian'
   roles:
     - buluma.setuptools
     - buluma.docker_ce
