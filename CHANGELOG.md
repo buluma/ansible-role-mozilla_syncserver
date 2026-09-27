@@ -1,5 +1,13 @@
 # Changelog
 
+## [Unreleased](https://github.com/buluma/ansible-role-mozilla_syncserver/tree/HEAD)
+
+[Full Changelog](https://github.com/buluma/ansible-role-mozilla_syncserver/compare/26.9.0...HEAD)
+
+**Merged pull requests:**
+
+- fix\(molecule\): restore syncserver CI across distros [\#35](https://github.com/buluma/ansible-role-mozilla_syncserver/pull/35) ([buluma](https://github.com/buluma))
+
 ## [26.9.0](https://github.com/buluma/ansible-role-mozilla_syncserver/tree/26.9.0) (2026-09-06)
 
 [Full Changelog](https://github.com/buluma/ansible-role-mozilla_syncserver/compare/26.6.2...26.9.0)
