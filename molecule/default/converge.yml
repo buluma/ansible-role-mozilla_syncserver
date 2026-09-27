@@ -14,7 +14,9 @@
         seconds: 10
     - name: Inspect syncserver container state
       ansible.builtin.command:
-        cmd: docker --host unix:///host-docker.sock inspect --format '{{ json .State }}' mozilla-syncserver
+        cmd: >-
+          docker --host unix:///host-docker.sock inspect --format
+          '{% raw %}{{ json .State }}{% endraw %}' mozilla-syncserver
       changed_when: false
       register: _mozilla_syncserver_container_state
     - name: Show syncserver container state
