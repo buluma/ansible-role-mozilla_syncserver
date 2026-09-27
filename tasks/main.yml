@@ -1,7 +1,6 @@
 ---
 - name: Ensure the container user group exists
   ansible.builtin.group:
-    gid: "1001"
     name: mozsyncserver
     state: present
     system: true
@@ -10,6 +9,7 @@
     create_home: false
     group: mozsyncserver
     name: mozsyncserver
+    non_unique: true
     shell: /usr/sbin/nologin
     state: present
     system: true
@@ -21,16 +21,17 @@
     owner: mozsyncserver
     path: /opt/mozilla_syncserver
     state: directory
-- name: Install requests python package
-  ansible.builtin.pip:
-    name: requests
+- name: Install requests for Python Docker modules
+  ansible.builtin.package:
+    name: python3-requests
+    state: present
 - name: Define the default docker container volumes
   ansible.builtin.set_fact:
     _mozilla_syncserver_docker_volumes:
       - /opt/mozilla_syncserver:/data
 - name: Append any additional volume mounts
   ansible.builtin.set_fact:
-    _mozilla_syncserver_docker_volumes: "{{ _mozilla_syncserver_docker_volumes }} + {{ mozilla_syncserver_additional_volumes }}"
+    _mozilla_syncserver_docker_volumes: "{{ _mozilla_syncserver_docker_volumes + mozilla_syncserver_additional_volumes }}"
 - name: Ensure the docker-compose template directory exists
   ansible.builtin.file:
     mode: "0755"
@@ -44,4 +45,4 @@
 - name: Ensure the service container(s) is/are started
   community.docker.docker_compose_v2:
     project_src: /opt/ansible-docker-compose/mozilla-syncserver
-    pull: always
+    pull: "{{ mozilla_syncserver_docker_compose_pull }}"

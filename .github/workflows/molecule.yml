@@ -96,6 +96,9 @@ jobs:
           python -m pip install --upgrade pip
           pip3 install ansible molecule molecule-plugins[docker] docker
 
+      - name: Prepare bind mount for Docker tests
+        run: sudo install -d -o 1001 -g 1001 /opt/mozilla_syncserver
+
       - name: Test with molecule
         run: |
           cd ansible-role-mozilla_syncserver

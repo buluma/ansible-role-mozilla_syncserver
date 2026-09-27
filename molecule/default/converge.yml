@@ -1,7 +1,11 @@
 ---
 - name: Converge
   hosts: all
+  environment:
+    DOCKER_HOST: unix:///host-docker.sock
   tasks:
     - name: Include ansible-mozilla-syncserver
       ansible.builtin.include_role:
         name: buluma.mozilla_syncserver
+      vars:
+        mozilla_syncserver_docker_compose_pull: missing
