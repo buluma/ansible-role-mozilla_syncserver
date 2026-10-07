@@ -6,6 +6,7 @@
 
 **Merged pull requests:**
 
+- Enable native Dependabot auto-merge with required CI [\#36](https://github.com/buluma/ansible-role-mozilla_syncserver/pull/36) ([buluma](https://github.com/buluma))
 - fix\(molecule\): restore syncserver CI across distros [\#35](https://github.com/buluma/ansible-role-mozilla_syncserver/pull/35) ([buluma](https://github.com/buluma))
 
 ## [26.9.0](https://github.com/buluma/ansible-role-mozilla_syncserver/tree/26.9.0) (2026-09-06)
