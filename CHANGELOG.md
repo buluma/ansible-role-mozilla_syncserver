@@ -1,5 +1,13 @@
 # Changelog
 
+## [Unreleased](https://github.com/buluma/ansible-role-mozilla_syncserver/tree/HEAD)
+
+[Full Changelog](https://github.com/buluma/ansible-role-mozilla_syncserver/compare/26.10.9...HEAD)
+
+**Merged pull requests:**
+
+- chore\(deps\): bump release-drafter/release-drafter from 7.9.0 to 7.10.0 [\#38](https://github.com/buluma/ansible-role-mozilla_syncserver/pull/38) ([dependabot[bot]](https://github.com/apps/dependabot))
+
 ## [26.10.9](https://github.com/buluma/ansible-role-mozilla_syncserver/tree/26.10.9) (2026-10-07)
 
 [Full Changelog](https://github.com/buluma/ansible-role-mozilla_syncserver/compare/26.9.0...26.10.9)
