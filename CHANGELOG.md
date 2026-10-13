@@ -1,11 +1,12 @@
 # Changelog
 
-## [Unreleased](https://github.com/buluma/ansible-role-mozilla_syncserver/tree/HEAD)
+## [26.10.9](https://github.com/buluma/ansible-role-mozilla_syncserver/tree/26.10.9) (2026-10-07)
 
-[Full Changelog](https://github.com/buluma/ansible-role-mozilla_syncserver/compare/26.9.0...HEAD)
+[Full Changelog](https://github.com/buluma/ansible-role-mozilla_syncserver/compare/26.9.0...26.10.9)
 
 **Merged pull requests:**
 
+- chore\(deps\): bump release-drafter/release-drafter from 7.7.0 to 7.9.0 [\#37](https://github.com/buluma/ansible-role-mozilla_syncserver/pull/37) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Enable native Dependabot auto-merge with required CI [\#36](https://github.com/buluma/ansible-role-mozilla_syncserver/pull/36) ([buluma](https://github.com/buluma))
 - fix\(molecule\): restore syncserver CI across distros [\#35](https://github.com/buluma/ansible-role-mozilla_syncserver/pull/35) ([buluma](https://github.com/buluma))
 
