@@ -6,6 +6,7 @@
 
 **Merged pull requests:**
 
+- chore\(deps\): bump ansible/ansible-lint from 26.9.0 to 26.10.0 [\#39](https://github.com/buluma/ansible-role-mozilla_syncserver/pull/39) ([dependabot[bot]](https://github.com/apps/dependabot))
 - chore\(deps\): bump release-drafter/release-drafter from 7.9.0 to 7.10.0 [\#38](https://github.com/buluma/ansible-role-mozilla_syncserver/pull/38) ([dependabot[bot]](https://github.com/apps/dependabot))
 
 ## [26.10.9](https://github.com/buluma/ansible-role-mozilla_syncserver/tree/26.10.9) (2026-10-07)
