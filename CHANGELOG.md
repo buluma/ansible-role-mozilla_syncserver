@@ -6,6 +6,8 @@
 
 **Merged pull requests:**
 
+- ANS-70: Fix changelog workflow [\#43](https://github.com/buluma/ansible-role-mozilla_syncserver/pull/43) ([buluma](https://github.com/buluma))
+- chore\(deps\): bump release-drafter/release-drafter from 7.10.0 to 7.11.0 [\#42](https://github.com/buluma/ansible-role-mozilla_syncserver/pull/42) ([dependabot[bot]](https://github.com/apps/dependabot))
 - chore\(deps\): bump ansible/ansible-lint from 26.10.1 to 26.11.0 [\#41](https://github.com/buluma/ansible-role-mozilla_syncserver/pull/41) ([dependabot[bot]](https://github.com/apps/dependabot))
 - chore\(deps\): bump ansible/ansible-lint from 26.10.0 to 26.10.1 [\#40](https://github.com/buluma/ansible-role-mozilla_syncserver/pull/40) ([dependabot[bot]](https://github.com/apps/dependabot))
 - chore\(deps\): bump ansible/ansible-lint from 26.9.0 to 26.10.0 [\#39](https://github.com/buluma/ansible-role-mozilla_syncserver/pull/39) ([dependabot[bot]](https://github.com/apps/dependabot))
@@ -41,12 +43,6 @@
 ## [26.6.0](https://github.com/buluma/ansible-role-mozilla_syncserver/tree/26.6.0) (2026-06-14)
 
 [Full Changelog](https://github.com/buluma/ansible-role-mozilla_syncserver/compare/d7ada4e7834cea2dd0131863b240534a3480fa3a...26.6.0)
-
-**Closed issues:**
-
-- Update buluma/todo-to-issue-action@v1.0.1 @buluma [\#20](https://github.com/buluma/ansible-role-mozilla_syncserver/issues/20)
-- Update action [\#19](https://github.com/buluma/ansible-role-mozilla_syncserver/issues/19)
-- rebuild action [\#18](https://github.com/buluma/ansible-role-mozilla_syncserver/issues/18)
 
 **Merged pull requests:**
 
